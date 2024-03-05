@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="restaurant_names">
+        <item>La Bella Italia</item>
+        <item>El Viejo Roble</item>
+        <item>Onde Pepe</item>
+        <item>La Picaña</item>
+        <item>La Casa Miche Restaurante</item>
+        <item>La Casita de Teja</item>
+        <item>Carnes a la Parrilla</item>
+        <item>VAMS Bar-Restaurante</item>
+        <item>Cafe Parrilla</item>
+        <item>COLINARE</item>
+    </string-array>
+
+    <string-array name="restaurant_stars">
+        <item>4.0</item>
+        <item>3.5</item>
+        <item>4.5</item>
+        <item>4.0</item>
+        <item>3.5</item>
+        <item>4.5</item>
+        <item>4.0</item>
+        <item>3.5</item>
+        <item>4.5</item>
+        <item>4.0</item>
+    </string-array>
+
+    <string-array name="restaurant_distances">
+        <item>1.0</item>
+        <item>2.0</item>
+        <item>1.5</item>
+        <item>2.5</item>
+        <item>1.0</item>
+        <item>2.0</item>
+        <item>1.5</item>
+        <item>2.5</item>
+        <item>1.0</item>
+        <item>2.0</item>
+    </string-array>
+
+    <string-array name="restaurant_images">
+        <item>@drawable/image1</item>
+        <item>@drawable/image2</item>
+        <item>@drawable/image3</item>
+        <item>@drawable/image4</item>
+        <item>@drawable/image5</item>
+        <item>@drawable/image6</item>
+        <item>@drawable/image7</item>
+        <item>@drawable/image8</item>
+        <item>@drawable/image9</item>
+        <item>@drawable/image10</item>
+    </string-array>
+
+<string-array name="restaurant_latitudes">
+    <item>-0.214950</item>
+    <item>-0.214951</item>
+    <!-- Agrega las latitudes restantes aquí -->
+</string-array>
+
+<string-array name="restaurant_longitudes">
+    <item>-78.513199</item>
+    <item>-78.513200</item>
+    <!-- Agrega las longitudes restantes aquí -->
+</string-array>
+
+</resources>
