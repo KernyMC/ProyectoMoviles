@@ -52,16 +52,30 @@
         <item>@drawable/image10</item>
     </string-array>
 
-<string-array name="restaurant_latitudes">
-    <item>-0.214950</item>
-    <item>-0.214951</item>
-    <!-- Agrega las latitudes restantes aquí -->
-</string-array>
+    <string-array name="restaurant_latitudes">
+        <item>-0.3187641</item>
+        <item>-0.31305337694744995</item>
+        <item>-0.315835</item>
+        <item>-0.3298552</item>
+        <item>-0.3298552</item>
+        <item>-0.3298552</item>
+        <item>-0.3298549</item>
+        <item>-0.3298552</item>
+        <item>-0.3298552</item>
+        <item>-0.3298552</item>
+    </string-array>
 
-<string-array name="restaurant_longitudes">
-    <item>-78.513199</item>
-    <item>-78.513200</item>
-    <!-- Agrega las longitudes restantes aquí -->
-</string-array>
+    <string-array name="restaurant_longitudes">
+        <item>-78.4565542</item>
+        <item>-78.44547026622705</item>
+        <item>-78.449457</item>
+        <item>-78.4541717</item>
+        <item>-78.4541717</item>
+        <item>-78.4541717</item>
+        <item>-78.5365737</item>
+        <item>-78.4541717</item>
+        <item>-78.4541717</item>
+        <item>-78.4541717</item>
+    </string-array>
 
 </resources>
