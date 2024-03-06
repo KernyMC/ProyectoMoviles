@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Connection
-                Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);                startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, Login.class);                startActivity(intent);
             }
         });
     }
