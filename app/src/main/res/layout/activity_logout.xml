@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/recCard"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="8dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recCard"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,7 +46,7 @@
             android:layout_marginEnd="78dp"
             android:layout_marginBottom="180dp"
             android:backgroundTint="@color/blue"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="sans-serif"
             android:text="Noooo, solo bromeo" />
 
         <Button
@@ -56,7 +60,7 @@
             android:layout_marginStart="103dp"
             android:layout_marginEnd="85dp"
             android:layout_marginBottom="102dp"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="sans-serif"
             android:text="Si, quiero irme"
             android:textColor="@color/black"
             app:strokeColor="@color/blue" />
@@ -71,11 +75,39 @@
             android:layout_marginStart="67dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="269dp"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="sans-serif"
             android:text="Oh no! Seguro que quieres salir?"
             android:textSize="24sp"
             android:textStyle="bold" />
 
 
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomAppBar"
+        android:layout_gravity="bottom"
+        android:background="@color/blue"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:layout_anchorGravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomNavigationView"
+                android:layout_marginEnd="20dp"
+                app:labelVisibilityMode="labeled"
+                android:background="@android:color/transparent"
+                app:menu="@menu/bottom_menu" />
+        </LinearLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
