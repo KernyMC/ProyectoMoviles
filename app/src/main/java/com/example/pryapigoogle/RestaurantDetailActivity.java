@@ -18,10 +18,12 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         TextView tvRestaurantStarsDetail = findViewById(R.id.tvRestaurantStarsDetail);
         TextView tvRestaurantCategoryDetail = findViewById(R.id.tvRestaurantCategoryDetail);
         ImageView ivRestaurantImageDetail = findViewById(R.id.ivRestaurantImageDetail);
+        TextView tvRestaurantDescriptionDetail = findViewById(R.id.tvRestaurantDescriptionDetail);
 
         tvRestaurantNameDetail.setText(restaurant.getName());
         tvRestaurantStarsDetail.setText(String.valueOf(restaurant.getStars()));
         tvRestaurantCategoryDetail.setText(restaurant.getCategory());
         ivRestaurantImageDetail.setImageResource(restaurant.getImageUrl());
+        tvRestaurantDescriptionDetail.setText(restaurant.getDescription());
     }
 }
