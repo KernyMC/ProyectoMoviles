@@ -37,7 +37,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         Restaurant restaurant = restaurants.get(position);
         holder.getTvRestaurantName().setText(restaurant.getName());
         holder.getTvRestaurantStars().setText(String.valueOf(restaurant.getStars()));
-        holder.getTvRestaurantDistance().setText(String.valueOf(restaurant.getDistance()));
+        holder.getTvRestaurantCategory().setText(String.valueOf(restaurant.getCategory()));
         holder.getIvRestaurantImage().setImageResource(restaurant.getImageUrl());
 
         holder.getBtnLocate().setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     public static class RestaurantViewHolder extends RecyclerView.ViewHolder {
         private TextView tvRestaurantName;
         private TextView tvRestaurantStars;
-        private TextView tvRestaurantDistance;
+        private TextView tvRestaurantCategory;
         private Button btnLocate;
         private ImageView ivRestaurantImage;
 
@@ -67,7 +67,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             super(itemView);
             tvRestaurantName = itemView.findViewById(R.id.tvRestaurantName);
             tvRestaurantStars = itemView.findViewById(R.id.tvRestaurantStars);
-            tvRestaurantDistance = itemView.findViewById(R.id.tvRestaurantDistance);
+            tvRestaurantCategory = itemView.findViewById(R.id.tvRestaurantDistance);
             btnLocate = itemView.findViewById(R.id.btnLocate);
             ivRestaurantImage = itemView.findViewById(R.id.ivRestaurantImage);
         }
@@ -81,7 +81,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         }
 
         public TextView getTvRestaurantDistance() {
-            return tvRestaurantDistance;
+            return tvRestaurantCategory;
         }
 
         public Button getBtnLocate() {

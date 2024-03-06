@@ -3,16 +3,16 @@ package com.example.pryapigoogle;
 public class Restaurant {
     private String name;
     private double stars;
-    private double distance;
+    private double category;
     private int imageUrl; // Change this from String to int
     private double x;
     private double y;
 
     // Constructor, getters and setters
-    public Restaurant(String name, double stars, double distance, int imageUrl, double x, double y) {
+    public Restaurant(String name, double stars, double category, int imageUrl, double x, double y) {
         this.name = name;
         this.stars = stars;
-        this.distance = distance;
+        this.category = category;
         this.imageUrl = imageUrl;
         this.x = x;
         this.y = y;
@@ -43,8 +43,8 @@ public class Restaurant {
         return stars;
     }
 
-    public double getDistance() {
-        return distance;
+    public double getCategory() {
+        return category;
     }
 
     public int getImageUrl() {
