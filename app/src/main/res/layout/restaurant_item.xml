@@ -14,16 +14,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/ivRestaurantImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/uploadimg"
-        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-        android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/ivRestaurantImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/uploadimg"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
         <TextView
             android:id="@+id/tvRestaurantName"
@@ -36,15 +37,27 @@
             android:text="Nombre Restaurante"
             android:textSize="20sp" />
 
+
         <TextView
             android:id="@+id/tvRestaurantStars"
             android:layout_width="78dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="99dp"
-            android:text="estrellas"
-            android:layout_marginTop="42dp" />
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="46dp"
+            android:src="@drawable/uploadimg"
+            android:text="estrellas" />
+
+        <ImageView
+            android:id="@+id/estrella"
+            android:layout_width="18dp"
+            android:layout_height="17dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="94dp"
+            android:layout_marginTop="47dp"
+            android:src="@drawable/star" />
 
         <TextView
             android:id="@+id/tvRestaurantDistance"
@@ -53,9 +66,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="191dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="151dp" />
+            android:layout_marginStart="151dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="191dp" />
 
         <Button
             android:id="@+id/btnLocate"
@@ -67,6 +80,7 @@
             android:layout_marginStart="286dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="34dp"
+            android:backgroundTint="@color/quantum_orange"
             android:text="Ir" />
 
     </RelativeLayout>

@@ -4,12 +4,12 @@ public class Restaurant {
     private String name;
     private double stars;
     private double distance;
-    private String imageUrl;
+    private int imageUrl; // Change this from String to int
     private double x;
     private double y;
 
     // Constructor, getters and setters
-    public Restaurant(String name, double stars, double distance, String imageUrl, double x, double y) {
+    public Restaurant(String name, double stars, double distance, int imageUrl, double x, double y) {
         this.name = name;
         this.stars = stars;
         this.distance = distance;
@@ -47,7 +47,7 @@ public class Restaurant {
         return distance;
     }
 
-    public String getImageUrl() {
+    public int getImageUrl() {
         return imageUrl;
     }
 }

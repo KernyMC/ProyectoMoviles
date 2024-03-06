@@ -12,7 +12,6 @@ import java.util.List;
 public class RestaurantsActivity extends AppCompatActivity {
     private RecyclerView rvRestaurants;
     private RestaurantAdapter adapter;
-    private static final String TAG = "RestaurantsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +21,9 @@ public class RestaurantsActivity extends AppCompatActivity {
         rvRestaurants = findViewById(R.id.rvRestaurants);
         rvRestaurants.setLayoutManager(new LinearLayoutManager(this));
 
-        // Create the adapter once
         adapter = new RestaurantAdapter(new ArrayList<>());
         rvRestaurants.setAdapter(adapter);
 
-        // Load restaurant data from XML
         String[] names = getResources().getStringArray(R.array.restaurant_names);
         String[] stars = getResources().getStringArray(R.array.restaurant_stars);
         String[] distances = getResources().getStringArray(R.array.restaurant_distances);
@@ -37,10 +34,11 @@ public class RestaurantsActivity extends AppCompatActivity {
         List<Restaurant> restaurants = new ArrayList<>();
 
         for (int i = 0; i < names.length; i++) {
-            restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), Double.parseDouble(distances[i]), images[i], Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
+            String imageName = images[i].substring(images[i].indexOf("/") + 1);
+            int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
+            restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), Double.parseDouble(distances[i]), imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
         }
 
-        // Update the adapter with the list of restaurants
         adapter.updateData(restaurants);
     }
 }
