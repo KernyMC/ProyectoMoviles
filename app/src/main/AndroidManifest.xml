@@ -32,7 +32,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".RestaurantsActivity" />
+
         <activity android:name=".RestaurantDetailActivity" />
+
+        <activity android:name=".Logout" />
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAnVFilelR_6eqOof-hnJDyd3fteeLhfsk" >

@@ -41,7 +41,7 @@ public class RestaurantsActivity extends AppCompatActivity {
         List<Restaurant> restaurants = new ArrayList<>();
 
         for (int i = 0; i < names.length; i++) {
-            String imageName = images[i].substring(images[i].indexOf("/") + 1);
+            String imageName = images[i];
             int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
             restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], descriptions[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
         }
