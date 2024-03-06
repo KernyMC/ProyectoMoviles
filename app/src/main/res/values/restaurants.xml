@@ -80,17 +80,17 @@
 
 
     <string-array name="restaurant_descriptions">
-        <item>Descripción del restaurante 1</item>
-        <item>Descripción del restaurante 2</item>
-        <item>Descripción del restaurante 3</item>
-        <item>Descripción del restaurante 4</item>
-        <item>Descripción del restaurante 5</item>
-        <item>Descripción del restaurante 6</item>
-        <item>Descripción del restaurante 7</item>
-        <item>Descripción del restaurante 8</item>
-        <item>Descripción del restaurante 9</item>
-        <item>Descripción del restaurante 10</item>
-
+        <item>Acogedor restaurante italiano con una amplia selección de pastas, pizzas y vinos.</item>
+        <item>Restaurante de comida tradicional española con un ambiente rústico y platos caseros.</item>
+        <item>Restaurante de cocina internacional con influencias latinoamericanas y platos innovadores.</item>
+        <item>Asador argentino conocido por sus deliciosas carnes a la parrilla y sus guarniciones caseras.</item>
+        <item>Restaurante de cocina creativa con menú degustación y ambiente elegante.</item>
+        <item>Acogedora cafetería con una variedad de cafés, pasteles caseros y ambiente familiar.</item>
+        <item>Asador especializado en carnes premium a la parrilla con un toque único en cada plato.</item>
+        <item>Bar animado con una amplia selección de cócteles y música en vivo los fines de semana.</item>
+        <item>Acogedor café con una variedad de opciones de desayuno y brunch, perfecto para relajarse.</item>
+        <item>Restaurante italiano contemporáneo con platos innovadores y ambiente sofisticado.</item>
     </string-array>
+
 
 </resources>
