@@ -27,7 +27,6 @@
             android:layout_height="69dp"
             android:layout_margin="10dp"
             android:background="#307A7272"
-            android:drawableLeft="@drawable/baseline_person_outline_24"
             android:drawablePadding="20dp"
             android:hint="Usuario"
             android:inputType="text"
@@ -36,9 +35,10 @@
             android:textColorHint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.126" />
+            app:layout_constraintVertical_bias="0.132" />
 
         <EditText
             android:id="@+id/et_contrasena"
@@ -46,7 +46,6 @@
             android:layout_height="69dp"
             android:layout_margin="10dp"
             android:background="#307A7272"
-            android:drawableLeft="@drawable/baseline_lock_24"
             android:drawablePadding="20dp"
             android:hint="Contraseña"
             android:inputType="textPassword"
