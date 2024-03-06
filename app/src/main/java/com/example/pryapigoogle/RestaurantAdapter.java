@@ -1,5 +1,6 @@
 package com.example.pryapigoogle;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,11 @@ import java.util.List;
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> {
     private List<Restaurant> restaurants;
+    private Context context;
 
-    public RestaurantAdapter(List<Restaurant> restaurants) {
+    public RestaurantAdapter(List<Restaurant> restaurants, Context context) {
         this.restaurants = restaurants;
+        this.context = context;
     }
 
     public void updateData(List<Restaurant> newRestaurants) {
@@ -37,7 +40,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         Restaurant restaurant = restaurants.get(position);
         holder.getTvRestaurantName().setText(restaurant.getName());
         holder.getTvRestaurantStars().setText(String.valueOf(restaurant.getStars()));
-        holder.getTvRestaurantCategory().setText(restaurant.getCategory());      
+        holder.getTvRestaurantCategory().setText(restaurant.getCategory());
+        holder.getIvRestaurantImage().setImageResource(restaurant.getImageUrl());
         holder.getBtnLocate().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +49,15 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
                 intent.putExtra("latitude", restaurant.getX());
                 intent.putExtra("longitude", restaurant.getY());
                 v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RestaurantDetailActivity.class);
+                intent.putExtra("selected_restaurant", restaurant);
+                context.startActivity(intent);
             }
         });
     }

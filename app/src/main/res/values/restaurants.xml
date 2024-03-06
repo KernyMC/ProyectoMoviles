@@ -78,4 +78,19 @@
         <item>-78.4541717</item>
     </string-array>
 
+
+    <string-array name="restaurant_descriptions">
+        <item>Descripción del restaurante 1</item>
+        <item>Descripción del restaurante 2</item>
+        <item>Descripción del restaurante 3</item>
+        <item>Descripción del restaurante 4</item>
+        <item>Descripción del restaurante 5</item>
+        <item>Descripción del restaurante 6</item>
+        <item>Descripción del restaurante 7</item>
+        <item>Descripción del restaurante 8</item>
+        <item>Descripción del restaurante 9</item>
+        <item>Descripción del restaurante 10</item>
+
+    </string-array>
+
 </resources>
