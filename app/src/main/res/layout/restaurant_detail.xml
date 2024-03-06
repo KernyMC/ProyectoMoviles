@@ -13,21 +13,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="344dp">
+        android:layout_height="681dp">
 
         <ImageView
             android:id="@+id/ivRestaurantImageDetail"
-            android:layout_width="203dp"
-            android:layout_height="69dp"
+            android:layout_width="198dp"
+            android:layout_height="165dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="91dp"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="93dp"
-            android:layout_marginBottom="264dp"
-            android:src="@drawable/baseline_list_24" />
+            android:layout_marginEnd="98dp"
+            android:layout_marginBottom="505dp"
+            android:src="@drawable/uploadimg" />
 
         <TextView
             android:id="@+id/tvRestaurantNameDetail"
@@ -37,10 +37,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="112dp"
-            android:layout_marginBottom="241dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="214dp"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="112dp"
             android:text="Nombre del restaurante" />
 
         <TextView
@@ -49,8 +49,8 @@
             android:layout_height="42dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="293dp"
-            android:layout_marginBottom="214dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginBottom="391dp"
             android:text="Estrellas del restaurante" />
 
         <TextView
@@ -59,22 +59,22 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="251dp"
             android:text="Categoría del restaurante" />
 
         <TextView
             android:id="@+id/tvRestaurantDescriptionDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="154dp"
+            android:layout_width="313dp"
+            android:layout_height="142dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="307dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="232dp"
             android:text="Descripción del restaurante" />
 
     </RelativeLayout>
