@@ -26,17 +26,17 @@
         <item>4.0</item>
     </string-array>
 
-    <string-array name="restaurant_distances">
-        <item>1.0</item>
-        <item>2.0</item>
-        <item>1.5</item>
-        <item>2.5</item>
-        <item>1.0</item>
-        <item>2.0</item>
-        <item>1.5</item>
-        <item>2.5</item>
-        <item>1.0</item>
-        <item>2.0</item>
+    <string-array name="restaurant_categories">
+        <item>Pizza</item>
+        <item>Carnes</item>
+        <item>Carnes</item>
+        <item>Hamburguesa</item>
+        <item>Pizza</item>
+        <item>Hamburguesa</item>
+        <item>Pizza</item>
+        <item>Hamburguesa</item>
+        <item>Pizza</item>
+        <item>Hamburguesa</item>
     </string-array>
 
     <string-array name="restaurant_images">

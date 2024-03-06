@@ -26,17 +26,18 @@ public class RestaurantsActivity extends AppCompatActivity {
 
         String[] names = getResources().getStringArray(R.array.restaurant_names);
         String[] stars = getResources().getStringArray(R.array.restaurant_stars);
-        String[] distances = getResources().getStringArray(R.array.restaurant_distances);
+        String[] categories = getResources().getStringArray(R.array.restaurant_categories); // Asegúrate de tener esto en tu archivo restaurants.xml
         String[] images = getResources().getStringArray(R.array.restaurant_images);
         String[] latitudes = getResources().getStringArray(R.array.restaurant_latitudes);
         String[] longitudes = getResources().getStringArray(R.array.restaurant_longitudes);
 
         List<Restaurant> restaurants = new ArrayList<>();
 
+
         for (int i = 0; i < names.length; i++) {
             String imageName = images[i].substring(images[i].indexOf("/") + 1);
             int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
-            restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), Double.parseDouble(distances[i]), imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
+            restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
         }
 
         adapter.updateData(restaurants);

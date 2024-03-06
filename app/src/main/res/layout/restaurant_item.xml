@@ -49,8 +49,12 @@
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="189dp"
+            android:layout_marginBottom="39dp"
             android:src="@drawable/uploadimg"
             android:text="estrellas" />
 
@@ -69,15 +73,17 @@
             android:src="@drawable/star" />
 
         <TextView
-            android:id="@+id/tvRestaurantDistance"
-            android:layout_width="45dp"
+            android:id="@+id/tvRestaurantCategory"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="97dp"
-            android:layout_marginTop="58dp"
-            android:layout_marginEnd="245dp" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="181dp"
+            android:layout_marginBottom="20dp" />
 
         <Button
             android:id="@+id/btnLocate"
@@ -86,9 +92,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="286dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="34dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="294dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="@color/quantum_orange"
             android:text="Ir" />
 
