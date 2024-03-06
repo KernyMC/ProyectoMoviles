@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LogoutActivity extends AppCompatActivity {
+public class Logout extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
