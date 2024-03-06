@@ -3,9 +3,14 @@ package com.example.pryapigoogle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import androidx.appcompat.widget.SearchView;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,16 +23,29 @@ import java.util.List;
 public class RestaurantsActivity extends AppCompatActivity {
     private RecyclerView rvRestaurants;
     private RestaurantAdapter adapter;
+    private SearchView searchView;
+    private Spinner spinner;
+    private List<Restaurant> allRestaurants;
+    private List<Restaurant> filteredRestaurants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        searchView = findViewById(R.id.searchView);
+        spinner = findViewById(R.id.spinner);
+
         rvRestaurants = findViewById(R.id.rvRestaurants);
         rvRestaurants.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new RestaurantAdapter(new ArrayList<>(), this);
+        allRestaurants = new ArrayList<>();
+        filteredRestaurants = new ArrayList<>();
+
+        adapter = new RestaurantAdapter(filteredRestaurants, this);
         rvRestaurants.setAdapter(adapter);
 
         String[] names = getResources().getStringArray(R.array.restaurant_names);
@@ -38,15 +56,16 @@ public class RestaurantsActivity extends AppCompatActivity {
         String[] latitudes = getResources().getStringArray(R.array.restaurant_latitudes);
         String[] longitudes = getResources().getStringArray(R.array.restaurant_longitudes);
 
-        List<Restaurant> restaurants = new ArrayList<>();
+for (int i = 0; i < names.length; i++) {
+    String imageName = images[i];
+    int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
+    allRestaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], descriptions[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
+}
 
-        for (int i = 0; i < names.length; i++) {
-            String imageName = images[i];
-            int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
-            restaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], descriptions[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
-        }
+filterRestaurants(); // Asegúrate de llamar a este método aquí
 
-        adapter.updateData(restaurants);
+setupSearchView();
+setupSpinner();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -72,6 +91,51 @@ public class RestaurantsActivity extends AppCompatActivity {
 
     }
 
+private void setupSearchView() {
+    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            filterRestaurants();
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            filterRestaurants();
+            return true;
+        }
+    });
+}
+
+    private void setupSpinner() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                filterRestaurants();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // No hacer nada
+            }
+        });
+    }
+
+private void filterRestaurants() {
+    String searchText = searchView.getQuery() != null ? searchView.getQuery().toString().toLowerCase() : "";
+    String selectedCategory = spinner.getSelectedItem() != null ? spinner.getSelectedItem().toString() : "";
+
+    filteredRestaurants.clear();
+
+    for (Restaurant restaurant : allRestaurants) {
+        if ((searchText.isEmpty() && selectedCategory.isEmpty()) ||
+            (restaurant.getName().toLowerCase().contains(searchText) && restaurant.getCategory().equals(selectedCategory))) {
+            filteredRestaurants.add(restaurant);
+        }
+    }
+
+    adapter.updateData(filteredRestaurants);
+}
     // Suponiendo que tienes un método para manejar el clic en un elemento de la lista
     public void onRestaurantSelected(Restaurant restaurant) {
         Intent intent = new Intent(this, RestaurantDetailActivity.class);
