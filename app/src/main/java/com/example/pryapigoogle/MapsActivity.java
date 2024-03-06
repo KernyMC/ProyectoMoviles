@@ -7,12 +7,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +37,8 @@ import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -76,6 +80,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Places.initialize(getApplicationContext(), "AIzaSyDRxolAYcASAmWkmc45VWX_MJY0hS4tNMA");
         // Create a new PlacesClient instance
         placesClient = Places.createClient(this);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.mapa) {
+                    // No hacer nada cuando se haga clic en "mapa"
+                    return true;
+                } else if (itemId == R.id.lista) {
+                    // Iniciar RestaurantsActivity cuando se haga clic en "lista"
+                    Intent intentLista = new Intent(MapsActivity.this, RestaurantsActivity.class);
+                    startActivity(intentLista);
+                    return true;
+                } else if (itemId == R.id.cuenta) {
+                    Intent intentCuenta = new Intent(MapsActivity.this, Logout.class);
+                    startActivity(intentCuenta);
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     @Override

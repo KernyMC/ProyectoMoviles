@@ -2,10 +2,15 @@ package com.example.pryapigoogle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +47,29 @@ public class RestaurantsActivity extends AppCompatActivity {
         }
 
         adapter.updateData(restaurants);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.mapa) {
+                    Intent intentMapa = new Intent(RestaurantsActivity.this, MapsActivity.class);
+                    startActivity(intentMapa);
+                    return true;
+                } else if (itemId == R.id.lista) {
+                    // Iniciar RestaurantsActivity cuando se haga clic en "lista"
+
+                    return true;
+                } else if (itemId == R.id.cuenta) {
+                    Intent intentCuenta = new Intent(RestaurantsActivity.this, Logout.class);
+                    startActivity(intentCuenta);
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     // Suponiendo que tienes un método para manejar el clic en un elemento de la lista
