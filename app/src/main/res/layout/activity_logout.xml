@@ -23,10 +23,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="104dp"
-            android:layout_marginBottom="330dp"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginBottom="366dp"
             android:scaleType="centerCrop"
             android:src="@drawable/logout"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
@@ -38,10 +38,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="114dp"
-            android:layout_marginEnd="65dp"
-            android:layout_marginBottom="210dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="197dp"
             android:backgroundTint="@color/blue"
+            android:fontFamily="@font/roboto"
             android:text="Noooo, solo bromeo" />
 
         <Button
@@ -52,12 +53,28 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="119dp"
-            android:layout_marginEnd="69dp"
-            android:layout_marginBottom="102dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="117dp"
+            android:fontFamily="@font/roboto"
             android:text="Si, quiero irme"
             android:textColor="@color/black"
             app:strokeColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="269dp"
+            android:fontFamily="@font/roboto"
+            android:text="Oh no! Seguro que quieres salir?"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
