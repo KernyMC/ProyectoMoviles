@@ -67,7 +67,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             super(itemView);
             tvRestaurantName = itemView.findViewById(R.id.tvRestaurantName);
             tvRestaurantStars = itemView.findViewById(R.id.tvRestaurantStars);
-            tvRestaurantCategory = itemView.findViewById(R.id.tvRestaurantDistance);
+            tvRestaurantCategory = itemView.findViewById(R.id.TvRestaurantCategory);
             btnLocate = itemView.findViewById(R.id.btnLocate);
             ivRestaurantImage = itemView.findViewById(R.id.ivRestaurantImage);
         }
@@ -80,7 +80,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             return tvRestaurantStars;
         }
 
-        public TextView getTvRestaurantDistance() {
+        public TextView getTvRestaurantCategory() {
             return tvRestaurantCategory;
         }
 
