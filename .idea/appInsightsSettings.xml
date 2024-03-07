@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.pryapigoogle" />
+                  <option name="mobileSdkAppId" value="1:604024356484:android:aec8ef7d49d2a9de1a0cd1" />
+                  <option name="projectId" value="pryapi" />
+                  <option name="projectNumber" value="604024356484" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

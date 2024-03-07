@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604024356484",
+    "project_id": "pryapi",
+    "storage_bucket": "pryapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604024356484:android:aec8ef7d49d2a9de1a0cd1",
+        "android_client_info": {
+          "package_name": "com.example.pryapigoogle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu29ialSKDgfbaQ5L4wYVBLt2isgO-kC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
