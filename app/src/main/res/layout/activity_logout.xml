@@ -61,7 +61,7 @@
             android:layout_marginEnd="85dp"
             android:layout_marginBottom="102dp"
             android:fontFamily="sans-serif"
-            android:text="Si, quiero irme"
+            android:text="Sí, quiero irme"
             android:textColor="@color/black"
             app:strokeColor="@color/blue" />
 
@@ -74,9 +74,9 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="67dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="269dp"
+            android:layout_marginBottom="271dp"
             android:fontFamily="sans-serif"
-            android:text="Oh no! Seguro que quieres salir?"
+            android:text="¡Oh, no! ¿Estás seguro de que quieres irte?"
             android:textSize="24sp"
             android:textStyle="bold" />
 
