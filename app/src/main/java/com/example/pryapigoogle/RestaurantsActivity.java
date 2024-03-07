@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import androidx.appcompat.widget.SearchView;
+
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -28,68 +30,71 @@ public class RestaurantsActivity extends AppCompatActivity {
     private List<Restaurant> allRestaurants;
     private List<Restaurant> filteredRestaurants;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurants);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_restaurants);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
 
-        searchView = findViewById(R.id.searchView);
-        spinner = findViewById(R.id.spinner);
+    searchView = findViewById(R.id.searchView);
+    spinner = findViewById(R.id.spinner);
 
-        rvRestaurants = findViewById(R.id.rvRestaurants);
-        rvRestaurants.setLayoutManager(new LinearLayoutManager(this));
+    rvRestaurants = findViewById(R.id.rvRestaurants);
+    rvRestaurants.setLayoutManager(new LinearLayoutManager(this));
 
-        allRestaurants = new ArrayList<>();
-        filteredRestaurants = new ArrayList<>();
+    allRestaurants = new ArrayList<>();
+    filteredRestaurants = new ArrayList<>();
 
-        adapter = new RestaurantAdapter(filteredRestaurants, this);
-        rvRestaurants.setAdapter(adapter);
+    adapter = new RestaurantAdapter(filteredRestaurants, this);
+    rvRestaurants.setAdapter(adapter);
 
-        String[] names = getResources().getStringArray(R.array.restaurant_names);
-        String[] stars = getResources().getStringArray(R.array.restaurant_stars);
-        String[] categories = getResources().getStringArray(R.array.restaurant_categories);
-        String[] descriptions = getResources().getStringArray(R.array.restaurant_descriptions);
-        String[] images = getResources().getStringArray(R.array.restaurant_images);
-        String[] latitudes = getResources().getStringArray(R.array.restaurant_latitudes);
-        String[] longitudes = getResources().getStringArray(R.array.restaurant_longitudes);
+    String[] names = getResources().getStringArray(R.array.restaurant_names);
+    String[] stars = getResources().getStringArray(R.array.restaurant_stars);
+    String[] categories = getResources().getStringArray(R.array.restaurant_categories);
+    String[] categoriasRest = getResources().getStringArray(R.array.categorias);
+    String[] descriptions = getResources().getStringArray(R.array.restaurant_descriptions);
+    String[] images = getResources().getStringArray(R.array.restaurant_images);
+    String[] latitudes = getResources().getStringArray(R.array.restaurant_latitudes);
+    String[] longitudes = getResources().getStringArray(R.array.restaurant_longitudes);
 
-for (int i = 0; i < names.length; i++) {
-    String imageName = images[i];
-    int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
-    allRestaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], descriptions[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
-}
-
-filterRestaurants(); // Asegúrate de llamar a este método aquí
-
-setupSearchView();
-setupSpinner();
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
-                if (itemId == R.id.mapa) {
-                    Intent intentMapa = new Intent(RestaurantsActivity.this, MapsActivity.class);
-                    startActivity(intentMapa);
-                    return true;
-                } else if (itemId == R.id.lista) {
-                    // Iniciar RestaurantsActivity cuando se haga clic en "lista"
-
-                    return true;
-                } else if (itemId == R.id.cuenta) {
-                    Intent intentCuenta = new Intent(RestaurantsActivity.this, Logout.class);
-                    startActivity(intentCuenta);
-                    return true;
-                }
-                return false;
-            }
-        });
-
+    for (int i = 0; i < names.length; i++) {
+        String imageName = images[i];
+        int imageResId = getResources().getIdentifier(imageName, "drawable", getPackageName());
+        allRestaurants.add(new Restaurant(names[i], Double.parseDouble(stars[i]), categories[i], descriptions[i], imageResId, Double.parseDouble(latitudes[i]), Double.parseDouble(longitudes[i])));
     }
+
+    filterRestaurants();
+
+    setupSearchView();
+    setupSpinner();
+
+    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        R.array.categorias, android.R.layout.simple_spinner_item);
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    spinner.setAdapter(adapter);
+
+    BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+    bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int itemId = item.getItemId();
+            if (itemId == R.id.mapa) {
+                Intent intentMapa = new Intent(RestaurantsActivity.this, MapsActivity.class);
+                startActivity(intentMapa);
+                return true;
+            } else if (itemId == R.id.lista) {
+                return true;
+            } else if (itemId == R.id.cuenta) {
+                Intent intentCuenta = new Intent(RestaurantsActivity.this, Logout.class);
+                startActivity(intentCuenta);
+                return true;
+            }
+            return false;
+        }
+    });
+}
 
 private void setupSearchView() {
     searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -121,21 +126,21 @@ private void setupSearchView() {
         });
     }
 
-private void filterRestaurants() {
-    String searchText = searchView.getQuery() != null ? searchView.getQuery().toString().toLowerCase() : "";
-    String selectedCategory = spinner.getSelectedItem() != null ? spinner.getSelectedItem().toString() : "";
+    private void filterRestaurants() {
+        String searchText = searchView.getQuery() != null ? searchView.getQuery().toString().toLowerCase() : "";
+        String selectedCategory = spinner.getSelectedItem() != null ? spinner.getSelectedItem().toString() : "";
 
-    filteredRestaurants.clear();
+        filteredRestaurants.clear();
 
-    for (Restaurant restaurant : allRestaurants) {
-        if ((searchText.isEmpty() && selectedCategory.isEmpty()) ||
-            (restaurant.getName().toLowerCase().contains(searchText) && restaurant.getCategory().equals(selectedCategory))) {
-            filteredRestaurants.add(restaurant);
+        for (Restaurant restaurant : allRestaurants) {
+            if ((searchText.isEmpty() && selectedCategory.isEmpty()) ||
+                    (restaurant.getName().toLowerCase().contains(searchText) && (selectedCategory.equals("Todos") || restaurant.getCategory().equals(selectedCategory)))) {
+                filteredRestaurants.add(restaurant);
+            }
         }
-    }
 
-    adapter.updateData(filteredRestaurants);
-}
+        adapter.updateData(filteredRestaurants);
+    }
     // Suponiendo que tienes un método para manejar el clic en un elemento de la lista
     public void onRestaurantSelected(Restaurant restaurant) {
         Intent intent = new Intent(this, RestaurantDetailActivity.class);

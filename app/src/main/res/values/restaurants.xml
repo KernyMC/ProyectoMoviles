@@ -27,6 +27,7 @@
     </string-array>
 
     <string-array name="restaurant_categories">
+        <item>All</item>
         <item>Pizza</item>
         <item>Carnes</item>
         <item>Carnes</item>
@@ -36,6 +37,13 @@
         <item>Pizza</item>
         <item>Hamburguesa</item>
         <item>Pizza</item>
+        <item>Hamburguesa</item>
+    </string-array>
+
+    <string-array name="categorias">
+        <item>Todos</item>
+        <item>Pizza</item>
+        <item>Carnes</item>
         <item>Hamburguesa</item>
     </string-array>
 
