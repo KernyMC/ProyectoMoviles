@@ -8,84 +8,12 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-    android:background="@drawable/fondo3"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="290dp"
-        android:layout_height="318dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549">
-
-        <EditText
-            android:id="@+id/et_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:layout_margin="10dp"
-            android:background="#307A7272"
-            android:drawablePadding="20dp"
-            android:hint="Usuario"
-            android:inputType="text"
-            android:padding="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.132" />
-
-        <EditText
-            android:id="@+id/et_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:layout_margin="10dp"
-            android:background="#307A7272"
-            android:drawablePadding="20dp"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.58" />
-
-        <Button
-            android:id="@+id/bt_login"
-            android:layout_width="260dp"
-            android:layout_height="63dp"
-            android:backgroundTint="#ec4a0c"
-            android:text="Iniciar Sesión"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.937" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ProgressBar
-
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.7">
+        android:background="@drawable/fondo3"
+        android:orientation="vertical"
+        android:padding="16dp">
+
         <TextView
             android:layout_width="128dp"
             android:layout_height="wrap_content"
@@ -116,32 +44,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="504dp"
             android:orientation="vertical"
             android:padding="28dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bienvenido"
-                android:textColor="#141A9A"
+                android:textColor="#5FC1D3"
                 android:textSize="32sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Por favor inicia sesión con tu información"
-                android:alpha="0.7"/>
+                android:alpha="0.7"
+                android:text="Por favor inicia sesión con tu información" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usuario"
                 android:alpha="0.7"
-                android:textStyle="bold"/>
+                android:text="Usuario"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_usuario"
@@ -152,13 +82,14 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contraseña"
                 android:alpha="0.7"
-                android:textStyle="bold"/>
+                android:text="Contraseña"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_contrasena"
@@ -173,9 +104,9 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recuerdame"
                     android:layout_centerVertical="true"
-                    android:alpha="0.7"/>
+                    android:alpha="0.7"
+                    android:text="Recuerdame" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -184,23 +115,22 @@
                     android:text="Olvide mi contraseña" />
 
             </RelativeLayout>
+
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"/>
+                android:layout_height="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/bt_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:backgroundTint="@color/quantum_orange"
                 android:text="Iniciar Sesión"
                 app:cornerRadius="32dp" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"/>
-
-
-
+                android:layout_height="10dp" />
 
         </LinearLayout>
 
